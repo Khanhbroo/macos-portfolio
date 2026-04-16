@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const FONT_WEIGHTS = {
   subtitle: {
@@ -39,11 +40,48 @@ const setUpTextHover = (container, type) => {
       fontVariationSettings: `"wght" ${weight}`,
     });
   };
+
+  const handleMouseMove = (event) => {
+    const { left } = container.getBoundingClientRect();
+    const mouseX = event.clientX - left;
+
+    letters.forEach((letter) => {
+      const { left: l, width: w } = letter.getBoundingClientRect();
+      const distance = Math.abs(mouseX - (l - left + w / 2));
+      const intensity = Math.exp(-(distance ** 2) / 2000);
+
+      animateLetter(letter, min + (max - min) * intensity);
+    });
+  };
+
+  const handleMouseLeave = () => {
+    letters.forEach((letter) => {
+      animateLetter(letter, base, 0.3);
+    });
+  };
+
+  container.addEventListener("mousemove", handleMouseMove);
+  container.addEventListener("mouseleave", handleMouseLeave);
+
+  return () => {
+    container.removeEventListener("mousemove", handleMouseMove);
+    container.removeEventListener("mouseleave", handleMouseLeave);
+  };
 };
 
 const Welcome = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+
+  useGSAP(() => {
+    const titleCleanup =  setUpTextHover(titleRef.current, "title");
+    const subtitleCleanup = setUpTextHover(subtitleRef.current, "subtitle");
+
+    return () => {
+      titleCleanup();
+      subtitleCleanup();
+    }
+  }, []);
 
   return (
     <section id="welcome">
