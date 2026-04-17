@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import useWindowStore from "@/store/window";
+import useWindowStore, { type WindowKey } from "@/store/window";
 
 import gsap from "gsap";
 import { Tooltip } from "react-tooltip";
@@ -8,17 +8,17 @@ import { dockApps } from "@/constants";
 
 const Dock = () => {
     const { openWindow, closeWindow, windows } = useWindowStore();
-  const dockRef = useRef(null);
+  const dockRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const dock = dockRef.current;
     if (!dock) return;
 
     const icons = dock.querySelectorAll(".dock-icon");
-    const animateIcons = (mouseX) => {
+    const animateIcons = (mouseX: number) => {
       const { left } = dock.getBoundingClientRect();
 
-      icons.forEach((icon) => {
+      icons.forEach((icon: Element) => {
         const { left: iconLeft, width: iconWidth } =
           icon.getBoundingClientRect();
         const center = iconLeft - left + iconWidth / 2;
@@ -34,14 +34,14 @@ const Dock = () => {
       });
     };
 
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       const { left } = dock.getBoundingClientRect();
 
       animateIcons(event.clientX - left);
     };
 
     const resetIcons = () => {
-      icons.forEach((icon) =>
+      icons.forEach((icon: Element) =>
         gsap.to(icon, {
           scale: 1,
           y: 0,
@@ -60,7 +60,7 @@ const Dock = () => {
     };
   }, []);
 
-  const toggleApp = (app) => {
+  const toggleApp = (app: { id: WindowKey; canOpen: boolean }) => {
     if(!app.canOpen) return;
 
     const window = windows[app.id];
@@ -86,7 +86,7 @@ const Dock = () => {
               data-tooltip-content={name}
               data-tooltip-delay-show={150}
               disabled={!canOpen}
-              onClick={() => toggleApp({ id, canOpen })}
+              onClick={() => toggleApp({ id: id as WindowKey, canOpen })}
             >
               <img
                 src={`/images/${icon}`}

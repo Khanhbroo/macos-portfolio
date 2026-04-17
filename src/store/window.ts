@@ -2,7 +2,17 @@ import { INITIAL_Z_INDEX, WINDOW_CONFIG } from "@/constants";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-const useWindowStore = create(
+export type WindowKey = keyof typeof WINDOW_CONFIG;
+
+export interface WindowState {
+  windows: typeof WINDOW_CONFIG;
+  nextZIndex: number;
+  openWindow: (windowKey: WindowKey, data?: any) => void;
+  closeWindow: (windowKey: WindowKey) => void;
+  focusWindow: (windowKey: WindowKey) => void;
+}
+
+const useWindowStore = create<WindowState>()(
   immer((set) => ({
     windows: WINDOW_CONFIG,
     nextZIndex: INITIAL_Z_INDEX + 1,

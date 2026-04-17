@@ -27,13 +27,13 @@ const renderText = (text: string, className: string, baseWeight = 400) => {
   ));
 };
 
-const setUpTextHover = (container, type) => {
+const setUpTextHover = (container: HTMLElement | null, type: keyof typeof FONT_WEIGHTS) => {
   if (!container) return () => {};
 
   const letters = container.querySelectorAll("span");
   const { min, max, default: base } = FONT_WEIGHTS[type];
 
-  const animateLetter = (letter, weight, duration = 0.25) => {
+  const animateLetter = (letter: Element, weight: number, duration = 0.25) => {
     return gsap.to(letter, { 
       duration,
       ease: "power2.out",
@@ -41,7 +41,7 @@ const setUpTextHover = (container, type) => {
     });
   };
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: MouseEvent) => {
     const { left } = container.getBoundingClientRect();
     const mouseX = event.clientX - left;
 
@@ -70,8 +70,8 @@ const setUpTextHover = (container, type) => {
 };
 
 const Welcome = () => {
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useGSAP(() => {
     const titleCleanup =  setUpTextHover(titleRef.current, "title");
