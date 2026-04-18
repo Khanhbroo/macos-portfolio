@@ -89,25 +89,25 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "Sep 2, 2024",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+      "💻 My Portfolio v1.01 - NextJS",
+    image: "/images/project1.png",
+    link: "https://nextjs-portfolio-delta-nine.vercel.app/",
   },
   {
     id: 2,
     date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    title: "🍸 Cocktails Mojito - GSAP Animation",
+    image: "/images/project2.png",
+    link: "https://gsap-cocktails-five-gamma.vercel.app/",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    date: "Aug 17, 2025",
+    title: "🌙 Lunar Lane – E-Commerce Website",
+    image: "/images/project3.png",
+    link: "https://ecommerce-lunarlane.vercel.app/",
   },
 ] as BlogPostsType;
 
@@ -117,16 +117,12 @@ const techStack = [
     items: ["React.js", "Next.js", "TypeScript"],
   },
   {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
-  },
-  {
     category: "Styling",
     items: ["Tailwind CSS", "Sass", "CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express"],
   },
   {
     category: "Database",

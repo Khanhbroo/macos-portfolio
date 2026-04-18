@@ -1,6 +1,6 @@
 import useWindowStore, { type WindowKey } from "@/store/window";
 
-const WindowControlls = ({ target }: { target: WindowKey }) => {
+const WindowControls = ({ target }: { target?: WindowKey }) => {
   const { closeWindow } = useWindowStore();
 
   return <div id="window-controls">
@@ -10,4 +10,4 @@ const WindowControlls = ({ target }: { target: WindowKey }) => {
   </div>;
 };
 
-export default WindowControlls;
+export default WindowControls;
