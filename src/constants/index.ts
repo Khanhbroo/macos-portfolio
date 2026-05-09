@@ -97,17 +97,17 @@ const blogPosts = [
   },
   {
     id: 2,
-    date: "Aug 28, 2025",
-    title: "🍸 Cocktails Mojito - GSAP Animation",
-    image: "/images/project2.png",
-    link: "https://gsap-cocktails-five-gamma.vercel.app/",
-  },
-  {
-    id: 3,
     date: "Aug 17, 2025",
     title: "🌙 Lunar Lane – E-Commerce Website",
     image: "/images/project3.png",
     link: "https://ecommerce-lunarlane.vercel.app/",
+  },
+  {
+    id: 3,
+    date: "Feb 02, 2026",
+    title: "🎮 Awkward - GSAP Animation",
+    image: "/images/project2.png",
+    link: "https://awkward-omega.vercel.app/",
   },
 ] as BlogPostsType;
 
