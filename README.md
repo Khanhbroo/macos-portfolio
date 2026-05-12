@@ -94,11 +94,9 @@ npm run dev
 
 ## 📸 Screenshots
 
-> 📸 *Add your actual macOS-style screenshots here to showcase the beautiful Glassmorphism UI.*
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/your-screenshot-1.png" width="800" alt="Desktop View" />
-  <img src="https://github.com/user-attachments/assets/your-screenshot-2.png" width="800" alt="Finder and Safari View" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/f853d9ee-1287-4ef4-b088-889d1e28a916" />
+  <img  width="800" alt="image" src="https://github.com/user-attachments/assets/1ebdbab6-3ff2-47f0-a9cd-6ca44eea3cc5" />
 </div>
 
 ---
