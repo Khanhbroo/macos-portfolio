@@ -8,7 +8,7 @@ A premium personal portfolio website designed to simulate the macOS operating sy
 ## 🚀 Live Demo & Performance
 
 ### 🔗 Live Demo
-[https://macos-portfolio-khanhbroo.vercel.app](https://macos-portfolio-khanhbroo.vercel.app)
+[https://macos-portfolio-ochre.vercel.app/](https://macos-portfolio-ochre.vercel.app/)
 
 > 💡 **Pro Tip:** This project uses high-performance GSAP animations. For the best experience, please use a modern browser (Chrome, Safari, or Edge) and ensure hardware acceleration is enabled.
 
