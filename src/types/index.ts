@@ -43,11 +43,6 @@ export type PhotosLinksType = {
   title: string;
 }[];
 
-export type GalleryType = {
-  id: number;
-  img: string;
-}[];
-
 export type FileType = {
   id: number;
   name: string;

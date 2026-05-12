@@ -2,7 +2,6 @@ import type {
   BlogPostsType,
   DockAppsType,
   FileType,
-  GalleryType,
   NavIconsType,
   NavLinksType,
   PhotosLinksType,
@@ -193,25 +192,6 @@ const photosLinks = [
   },
 ] as PhotosLinksType;
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-] as GalleryType;
-
 export {
   navLinks,
   navIcons,
@@ -220,7 +200,6 @@ export {
   techStack,
   socials,
   photosLinks,
-  gallery,
 };
 
 const WORK_LOCATION = {
