@@ -26,7 +26,7 @@ const Finder = () => {
     <div>
       <h3>{title}</h3>
       <ul>
-        {items.map((item: FileType) => (
+        {items?.map((item: FileType) => (
           <li
             key={item.id}
             onClick={() => setActiveLocation(item)}
@@ -52,10 +52,10 @@ const Finder = () => {
       <div className="bg-white flex h-full">
         <div className="sidebar">
           {renderList("Favorites", Object.values(locations))}
-          {renderList("Work", locations.work.children as FileType[])}
+          {renderList("Work", (locations.work.children || []) as FileType[])}
         </div>
         <ul className="content">
-          {activeLocation?.children.map((item: FileType) => (
+          {activeLocation?.children?.map((item: FileType) => (
             <li
               key={item.id}
               className={item.position}
