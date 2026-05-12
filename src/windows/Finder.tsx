@@ -6,7 +6,7 @@ import { locations } from "@/constants";
 import WindowWrapper from "@/hoc/WindowWrapper";
 import clsx from "clsx";
 import { SearchIcon } from "lucide-react";
-import useWindowStore from "@/store/window";
+import useWindowStore, { type WindowKey } from "@/store/window";
 
 const Finder = () => {
   const { activeLocation, setActiveLocation } = useLocationStore();
@@ -20,6 +20,8 @@ const Finder = () => {
     } else if(item.fileType === "url" && item.href) {
       return window.open(item.href, "_blank")
     }
+
+    openWindow(`${item.fileType}${item.kind}` as WindowKey, item);
   };
 
   const renderList = (title: string, items: FileType[]) => (

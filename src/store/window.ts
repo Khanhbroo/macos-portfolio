@@ -5,7 +5,14 @@ import { immer } from "zustand/middleware/immer";
 export type WindowKey = keyof typeof WINDOW_CONFIG;
 
 export interface WindowState {
-  windows: typeof WINDOW_CONFIG;
+  windows: Record<
+    WindowKey,
+    {
+      isOpen: boolean;
+      zIndex: number;
+      data: any;
+    }
+  >;
   nextZIndex: number;
   focusWindowKey: any;
   openWindow: (windowKey: WindowKey, data?: any) => void;
